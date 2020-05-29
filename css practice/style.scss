@@ -1,0 +1,599 @@
+$primary-color: rgb(23, 151, 236);
+$light-color:#fff;
+$dark-color:#000;
+$grey-color:#eee;
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+//general styles
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    margin: 20px 5px;
+    padding: 8px 25px;
+    font-size: 20px;
+    outline: none;
+    color: $light-color;
+    cursor: pointer;
+}
+
+.btn1 {
+    background: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    &:hover {
+        background: $primary-color;
+        color: $light-color;
+    }
+}
+
+.btn2 {
+    background: transparent;
+    border: 2px solid $light-color;
+    &:hover {
+        background: $light-color;
+        color: $dark-color;
+    }
+}
+
+.card {
+    padding: 20px 10px;
+    border: 5px solid lighten($color: $primary-color, $amount: 40);
+    border-radius: 5px;
+    &:hover {
+        border: 5px solid $primary-color;
+    }
+}
+
+#products h1,
+#about h1,
+#price h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    padding: 50px 0;
+}
+
+#products,
+#about,
+#price,
+.portfolio {
+    padding-bottom: 40px;
+}
+
+#header {
+    z-index: 1;
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    height: 4.5rem;
+    background: $primary-color;
+    .logo {
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            text-decoration: none;
+            color: $light-color;
+            padding-top: 1rem;
+            font-size: 20px;
+        }
+        .header-image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    // drop down buttons
+    .drop {
+        height: 40px;
+        width: 40px;
+        float: right;
+        position: absolute;
+        top: 8px;
+        right: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        .fa {
+            color: $light-color;
+            font-size: 30px;
+            border: 1px solid $light-color;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+    }
+    // nav items
+    ul {
+        float: right;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .nav-link {
+            list-style: none;
+            padding: 10px 20px;
+            a {
+                text-decoration: none;
+                color: $light-color;
+                display: inline;
+                cursor: pointer;
+            }
+            &:hover {
+                color: darken($color: $primary-color, $amount: 40);
+                background: darken($color: $primary-color, $amount: 5)
+            }
+        }
+    }
+}
+
+.showcase {
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/163141/instagram-social-media-web-pages-internet-163141.jpeg?auto=compress&cs=tinysrgb&h=350');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .overlay {
+        background: rgba($color: $dark-color, $alpha: 0.5);
+        height: 100vh;
+    }
+    .show-content {
+        z-index: 1;
+        color: $light-color;
+        text-align: center;
+        padding-top: 40vh;
+        span {
+            color: $primary-color;
+        }
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 25px;
+        }
+    }
+}
+
+#products {
+    text-align: center;
+    padding-bottom: 40px;
+    .product {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        h2 {
+            font-size: 2rem;
+            color: $primary-color;
+        }
+        .img {
+            width: 20px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+#about {
+    background: $grey-color;
+    .tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        .left {}
+        .right {
+            display: grid;
+            grid-template-columns: 1fr;
+            .content {
+                display: grid;
+                grid-template-columns: 50px 1fr;
+                .icon {
+                    font-size: 1.5rem;
+                    color: $light-color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $primary-color;
+                    width: 40px;
+                    height: 40px;
+                }
+                .text {
+                    p {
+                        color: lighten($color: $dark-color, $amount: 30)
+                    }
+                }
+            }
+        }
+    }
+}
+
+#price {
+    text-align: center;
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        .card {
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    font-size: 1.2rem;
+                    color: lighten($color: $dark-color, $amount: 30)
+                }
+            }
+        }
+    }
+}
+
+#contact {
+    background: $grey-color;
+    .tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .left {
+            background: url("https://images.pexels.com/photos/241345/pexels-photo-241345.jpeg?auto=compress&cs=tinysrgb&h=350");
+            background-repeat: no-repeat;
+            background-size: cover;
+            .left-content {
+                margin: 40px 40px 40px 20%;
+                color: $light-color;
+                h2 {
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                }
+                .content {
+                    display: grid;
+                    grid-template-columns: 60px 1fr;
+                    .icon {
+                        font-size: 1.5rem;
+                        color: $light-color;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: transparent;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid $light-color;
+                        border-radius: 50%;
+                    }
+                    .text {
+                        p {
+                            color: $light-color;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        .right-content {
+            margin: 40px 20% 40px 40px;
+            color: $dark-color;
+            h2 {
+                font-size: 1.3rem;
+                text-transform: uppercase;
+            }
+            button {
+                float: right;
+            }
+            .content {
+                display: grid;
+                grid-template-areas: "f l" "e e" "m m" "b b";
+                background: $light-color;
+                padding: 20px;
+                margin: 30px 0;
+                border-radius: 5px;
+                .fNam {
+                    grid-area: f;
+                }
+                .lNam {
+                    grid-area: l;
+                }
+                .email {
+                    grid-area: e;
+                }
+                .message {
+                    grid-area: m;
+                }
+                .btn1 {
+                    grid-area: b;
+                }
+                grid-template-columns: repeat(2,
+                1fr);
+                grid-gap: 10px;
+                input,
+                textarea {
+                    width: 100%;
+                    outline: none;
+                    font-size: 1.2rem;
+                    padding: 30px 0 5px 0;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 2px solid $primary-color;
+                    &:hover {
+                        border-bottom: 2px solid lighten($color: $primary-color, $amount: 20);
+                    }
+                }
+                textarea {
+                    &:focus {
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-image: url('https://images.pexels.com/photos/1146134/pexels-photo-1146134.jpeg?auto=compress&cs=tinysrgb&h=350');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: $light-color;
+    h2 {
+        font-size: 3rem;
+        span {
+            color: $primary-color;
+        }
+    }
+}
+
+.main-footer {
+    background: $primary-color;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    span {
+        color: $dark-color;
+    }
+    h4 {
+        color: $light-color;
+        margin: 0;
+    }
+}
+
+// MEDIA QUERIES
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    #products h1,
+    #about h1,
+    #price h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 25px 0;
+    }
+    #header {
+        height: 3.5rem;
+        nav {
+            display: none;
+        }
+        .drop {
+            display: block;
+        }
+    }
+    button {
+        border: none;
+        border-radius: 5px;
+        margin: 0px 5px;
+        padding: 8px 15px;
+        font-size: 1rem;
+        outline: none;
+        color: $light-color;
+        cursor: pointer;
+    }
+    .showcase {
+        height: 60vh;
+        .overlay {
+            height: 60vh;
+        }
+        .show-content {
+            padding-top: 20vh;
+            h1 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+    #products {
+        padding-bottom: 40px;
+        .product {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr;
+            .fa,
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    #about {
+        background: $grey-color;
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .right {
+            .content {
+                .icon {
+                    font-size: 1rem;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+    #price {
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+        }
+    }
+    #contact {
+        background: $grey-color;
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr;
+            .left {
+                .left-content {
+                    padding: 20px;
+                    margin: 20px 0 20px 0;
+                    color: $light-color;
+                    .content {
+                        .icon {
+                            font-size: 1rem;
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .text {
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            .right-content {
+                padding: 20px;
+                margin: 20px 0 20px 0;
+                color: $dark-color;
+            }
+        }
+    }
+    .footer {
+        height: 200px;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+    #header {
+        // nav items
+        height: 3.5rem;
+        ul {
+            font-size: 10px;
+            .nav-link {
+                padding: 10px 10px;
+            }
+        }
+    }
+    #products h1,
+    #about h1,
+    #price h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 25px 0;
+    }
+    .showcase {
+        height: 50vh;
+        .overlay {
+            height: 50vh;
+        }
+        .show-content {
+            padding-top: 15vh;
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+    #products {
+        padding-bottom: 40px;
+        .product {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(2, 1fr);
+            .fa,
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    #price {
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+    }
+    #contact {
+        background: $grey-color;
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr;
+            .left {
+                .left-content {
+                    padding: 20px;
+                    margin: 20px 0 20px 0;
+                    .content {
+                        .icon {
+                            font-size: 1rem;
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .text {
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                .right-content {
+                    margin: 20px auto;
+                    width: 400px;
+                    max-width: 500px;
+                    h2 {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 910px) {
+    .showcase {
+        .show-content {
+            padding-top: 40vh;
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}
